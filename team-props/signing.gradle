@@ -7,12 +7,16 @@ import javax.naming.ConfigurationException
  *
  * Simplest usage:
  * - Create directory ~/.android-signing/<yourconfigname>
- * - Create or copy a release key to ~/.android-signing/<yourconfigname>/<yourconfigname>.keystore
- * - Create a configuration file in ~/.android-signing/<yourconfigname>/<yourconfigname>.gradle with
+ * - Create or copy a release key to "~/.android-signing/<yourconfigname>/<yourconfigname>.keystore"
+ * - Create a configuration file in "~/.android-signing/<yourconfigname>/<yourconfigname>.gradle" with
+ *
  * <pre>
- *     project.ext {releaseStorePassword = 'SomeThingS3cr3t'
- releaseKeyAlias = 'release'
- releaseKeyPassword = 'SomeThingS3cr3t'}</pre>
+ *     project.ext {
+ *          releaseStorePassword = 'SomeThingS3cr3t'
+ *          releaseKeyAlias = 'release'
+ *          releaseKeyPassword = 'SomeThingS3cr3t'
+ *    }
+ * </pre>
  * - check your successful configuration with ./gradlew singingReport -PreleaseConfig=yourconfigname
  *
  * Optional settings
