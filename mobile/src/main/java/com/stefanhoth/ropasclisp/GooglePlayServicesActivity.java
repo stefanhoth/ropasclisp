@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.google.android.gms.common.ConnectionResult;
 import com.stefanhoth.ropasclisp.achievements.AchievementObserver;
 import com.stefanhoth.ropasclisp.games_sdk.PlayGamesClient;
+import com.stefanhoth.ropasclisp.achievements.DAILY_STATE;
 
 public class GooglePlayServicesActivity extends AppCompatActivity {
 
@@ -68,6 +69,7 @@ public class GooglePlayServicesActivity extends AppCompatActivity {
 
     public void onGameReady() {
         achievementObserver.onGameStart();
+        DAILY_STATE.with(this).countAppStart();
     }
 
     public void onGameWin() {
