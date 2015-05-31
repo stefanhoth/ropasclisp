@@ -27,12 +27,7 @@ public class GooglePlayServicesActivity extends AppCompatActivity {
 
         playGamesClient.restoreInstanceState(savedInstanceState);
 
-        boolean firstSessionToday = isFirstSessionToday(savedInstanceState);
-        achievementObserver = new AchievementObserver(playGamesClient, firstSessionToday);
-    }
-
-    private boolean isFirstSessionToday(Bundle savedInstanceState) {
-        return true;
+        achievementObserver = new AchievementObserver(playGamesClient, this);
     }
 
     @Override
