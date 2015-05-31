@@ -11,6 +11,7 @@ import com.stefanhoth.ropasclisp.games_sdk.PlayGamesClient;
 public class GooglePlayServicesActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_RESOLUTION = 1;
+    private static final int CODE_REQUEST_ACHIEVEMENTS = 42;
 
     private PlayGamesClient playGamesClient;
 
@@ -41,6 +42,10 @@ public class GooglePlayServicesActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         playGamesClient.onSaveInstanceState(outState);
+    }
+
+    public void showAchievements() {
+        startActivityForResult(playGamesClient.getDisplayAchievementsIntent(), CODE_REQUEST_ACHIEVEMENTS);
     }
 
     public void startPlayGamesErrorResolution(ConnectionResult result) throws IntentSender.SendIntentException {

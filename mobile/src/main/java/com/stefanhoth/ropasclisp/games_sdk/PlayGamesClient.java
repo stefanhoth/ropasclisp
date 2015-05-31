@@ -1,6 +1,7 @@
 package com.stefanhoth.ropasclisp.games_sdk;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
 
@@ -60,6 +61,7 @@ public class PlayGamesClient implements GoogleApiClient.ConnectionCallbacks, Goo
     @Override
     public void onConnected(Bundle connectionHint) {
         Log.i("GoogleApiClient connected");
+        activity.showAchievements();
     }
 
     /**
@@ -119,15 +121,20 @@ public class PlayGamesClient implements GoogleApiClient.ConnectionCallbacks, Goo
     }
 
     public void unlockAchievement(ACHIEVEMENT achievement) {
-        if (gamesApiClient == null || !gamesApiClient.isConnected()) {
+        if(gamesApiClient == null || ! gamesApiClient.isConnected()){
             Log.w("Could not unlock achievement - gamesApiClient in invalid state");
             return;
         }
 
-        if (achievement.isIncremental()) {
+        if(achievement.isIncremental()){
             Games.Achievements.increment(gamesApiClient, achievement.getAchievementId(activity), 1);
         } else {
             Games.Achievements.unlock(gamesApiClient, achievement.getAchievementId(activity));
         }
     }
+
+    public Intent getDisplayAchievementsIntent() {
+        return Games.Achievements.getAchievementsIntent(gamesApiClient);
+    }
+
 }
