@@ -1,23 +1,21 @@
 package com.stefanhoth.ropasclisp;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.Intent;
 import android.content.IntentSender.SendIntentException;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.games.Games;
+import com.novoda.notils.logger.simple.Log;
 
-public class GooglePlayServicesActivity extends Activity implements
+public class GooglePlayServicesActivity extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener {
-
-    private static final String TAG = "GooglePlayServicesActiv";
 
     private static final String KEY_IN_RESOLUTION = "is_in_resolution";
 
@@ -29,7 +27,7 @@ public class GooglePlayServicesActivity extends Activity implements
     /**
      * Google API client.
      */
-    private GoogleApiClient mGoogleApiClient;
+    private GoogleApiClient gamesApiClient;
 
     /**
      * Determines if the client is in a resolution state, and
@@ -58,15 +56,15 @@ public class GooglePlayServicesActivity extends Activity implements
     @Override
     protected void onStart() {
         super.onStart();
-        if (mGoogleApiClient == null) {
-            mGoogleApiClient = new GoogleApiClient.Builder(this)
+        if (gamesApiClient == null) {
+            gamesApiClient = new GoogleApiClient.Builder(this)
                     .addApi(Games.API)
                     .addScope(Games.SCOPE_GAMES)
                     .addConnectionCallbacks(this)
                     .addOnConnectionFailedListener(this)
                     .build();
         }
-        mGoogleApiClient.connect();
+        gamesApiClient.connect();
     }
 
     /**
@@ -75,8 +73,8 @@ public class GooglePlayServicesActivity extends Activity implements
      */
     @Override
     protected void onStop() {
-        if (mGoogleApiClient != null) {
-            mGoogleApiClient.disconnect();
+        if (gamesApiClient != null) {
+            gamesApiClient.disconnect();
         }
         super.onStop();
     }
@@ -105,37 +103,37 @@ public class GooglePlayServicesActivity extends Activity implements
 
     private void retryConnecting() {
         mIsInResolution = false;
-        if (!mGoogleApiClient.isConnecting()) {
-            mGoogleApiClient.connect();
+        if (!gamesApiClient.isConnecting()) {
+            gamesApiClient.connect();
         }
     }
 
     /**
-     * Called when {@code mGoogleApiClient} is connected.
+     * Called when {@code gamesApiClient} is connected.
      */
     @Override
     public void onConnected(Bundle connectionHint) {
-        Log.i(TAG, "GoogleApiClient connected");
-        Games.Achievements.unlock(mGoogleApiClient, getString(R.string.achievement_hellothere));
+        Log.i("GoogleApiClient connected");
+        Games.Achievements.unlock(gamesApiClient, getString(R.string.achievement_hellothere));
     }
 
     /**
-     * Called when {@code mGoogleApiClient} connection is suspended.
+     * Called when {@code gamesApiClient} connection is suspended.
      */
     @Override
     public void onConnectionSuspended(int cause) {
-        Log.i(TAG, "GoogleApiClient connection suspended");
+        Log.i("GoogleApiClient connection suspended");
         retryConnecting();
     }
 
     /**
-     * Called when {@code mGoogleApiClient} is trying to connect but failed.
+     * Called when {@code gamesApiClient} is trying to connect but failed.
      * Handle {@code result.getResolution()} if there is a resolution
      * available.
      */
     @Override
     public void onConnectionFailed(ConnectionResult result) {
-        Log.i(TAG, "GoogleApiClient connection failed: " + result.toString());
+        Log.i("GoogleApiClient connection failed: ", result.toString());
         if (!result.hasResolution()) {
             // Show a localized error dialog.
             GooglePlayServicesUtil.getErrorDialog(
@@ -157,7 +155,7 @@ public class GooglePlayServicesActivity extends Activity implements
         try {
             result.startResolutionForResult(this, REQUEST_CODE_RESOLUTION);
         } catch (SendIntentException e) {
-            Log.e(TAG, "Exception while starting resolution activity", e);
+            Log.e(e, "Exception while starting resolution activity");
             retryConnecting();
         }
     }
