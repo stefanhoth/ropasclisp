@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.google.android.gms.common.ConnectionResult;
+import com.stefanhoth.ropasclisp.achievements.AchievementObserver;
 import com.stefanhoth.ropasclisp.games_sdk.PlayGamesClient;
 
 public class GooglePlayServicesActivity extends AppCompatActivity {
@@ -14,6 +15,7 @@ public class GooglePlayServicesActivity extends AppCompatActivity {
     private static final int CODE_REQUEST_ACHIEVEMENTS = 42;
 
     private PlayGamesClient playGamesClient;
+    private AchievementObserver achievementObserver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,13 @@ public class GooglePlayServicesActivity extends AppCompatActivity {
         }
 
         playGamesClient.restoreInstanceState(savedInstanceState);
+
+        boolean firstSessionToday = isFirstSessionToday(savedInstanceState);
+        achievementObserver = new AchievementObserver(playGamesClient, firstSessionToday);
+    }
+
+    private boolean isFirstSessionToday(Bundle savedInstanceState) {
+        return true;
     }
 
     @Override
@@ -61,4 +70,13 @@ public class GooglePlayServicesActivity extends AppCompatActivity {
                 break;
         }
     }
+
+    public void onGameReady() {
+        achievementObserver.onGameStart();
+    }
+
+    public void onGameWin() {
+        achievementObserver.onGameWin();
+    }
+
 }
