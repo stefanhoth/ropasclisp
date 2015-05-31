@@ -17,6 +17,7 @@ android {
         debug {
             storeFile file("$rootProject.projectDir/team-props/keys/debug.keystore")
         }
+        release {}
     }
     buildTypes {
         debug {
