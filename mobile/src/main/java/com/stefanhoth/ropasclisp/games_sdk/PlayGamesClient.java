@@ -11,6 +11,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.games.Games;
 import com.novoda.notils.logger.simple.Log;
 import com.stefanhoth.ropasclisp.GooglePlayServicesActivity;
+import com.stefanhoth.ropasclisp.achievements.ACHIEVEMENT;
 
 public class PlayGamesClient implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 

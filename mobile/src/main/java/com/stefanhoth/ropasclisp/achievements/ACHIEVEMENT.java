@@ -1,4 +1,4 @@
-package com.stefanhoth.ropasclisp.games_sdk;
+package com.stefanhoth.ropasclisp.achievements;
 
 import android.content.Context;
 import android.support.annotation.StringRes;
