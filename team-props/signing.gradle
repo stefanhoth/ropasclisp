@@ -18,6 +18,7 @@ import javax.naming.ConfigurationException
  *    }
  * </pre>
  * - check your successful configuration with ./gradlew singingReport -PreleaseConfig=yourconfigname
+ * - to use the release config in Android Studio I'd suggest to add "releaseConfig=yourconfigname" to "~/.gradle/gradle.properties"
  *
  * Optional settings
  * - System env var SIGNING_CONFIG_BASEDIR to change ~/.android-signing to your prefered base dir
