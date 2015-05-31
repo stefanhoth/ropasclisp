@@ -70,6 +70,7 @@ public class GooglePlayServicesActivity extends AppCompatActivity {
     public void onGameReady() {
         achievementObserver.onGameStart();
         DAILY_STATE.with(this).countAppStart();
+        showAchievements();
     }
 
     public void onGameWin() {
