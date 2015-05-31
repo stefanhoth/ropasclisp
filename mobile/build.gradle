@@ -3,36 +3,36 @@ apply plugin: 'com.android.application'
 apply from: file("$rootProject.projectDir/team-props/signing.gradle")
 
 android {
-  compileSdkVersion 22
-  buildToolsVersion "22.0.1"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
 
-  defaultConfig {
-    applicationId "com.stefanhoth.ropasclisp"
-    minSdkVersion 19
-    targetSdkVersion 22
-    versionCode 1
-    versionName "0.1.0"
-  }
-  signingConfigs {
-    debug {
-      storeFile file("$rootProject.projectDir/team-props/keys/debug.keystore")
+    defaultConfig {
+        applicationId "com.stefanhoth.ropasclisp"
+        minSdkVersion 19
+        targetSdkVersion 22
+        versionCode 1
+        versionName "0.1.0"
     }
-  }
-  buildTypes {
-    debug {
-      applicationIdSuffix ".debug"
+    signingConfigs {
+        debug {
+            storeFile file("$rootProject.projectDir/team-props/keys/debug.keystore")
+        }
     }
-    release {
-      signingConfig signingConfigs.release
-      minifyEnabled false
-      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
     }
-  }
 }
 
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
-  compile 'com.android.support:appcompat-v7:22.2.0'
-  compile 'com.google.android.gms:play-services-games:7.5.0'
-  compile 'com.google.android.gms:play-services-nearby:7.5.0'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.google.android.gms:play-services-games:7.5.0'
+    compile 'com.google.android.gms:play-services-nearby:7.5.0'
 }
