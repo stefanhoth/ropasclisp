@@ -62,7 +62,7 @@ public class PlayGamesClient implements GoogleApiClient.ConnectionCallbacks, Goo
     @Override
     public void onConnected(Bundle connectionHint) {
         Log.i("GoogleApiClient connected");
-        activity.showAchievements();
+        activity.onGameReady();
     }
 
     /**
