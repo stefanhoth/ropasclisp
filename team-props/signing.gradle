@@ -1,0 +1,61 @@
+import javax.naming.ConfigurationException
+
+/**
+ * Simple wrapper to configure the release signing configuration from an unversioned file
+ *
+ * NOTE: Apply this file after you've applied the android plugin
+ *
+ * Simplest usage:
+ * - Create directory ~/.android-signing/<yourconfigname>
+ * - Create or copy a release key to ~/.android-signing/<yourconfigname>/<yourconfigname>.keystore
+ * - Create a configuration file in ~/.android-signing/<yourconfigname>/<yourconfigname>.gradle with
+ * <pre>
+ *     project.ext {releaseStorePassword = 'SomeThingS3cr3t'
+ releaseKeyAlias = 'release'
+ releaseKeyPassword = 'SomeThingS3cr3t'}</pre>
+ * - check your successful configuration with ./gradlew singingReport -PreleaseConfig=yourconfigname
+ *
+ * Optional settings
+ * - System env var SIGNING_CONFIG_BASEDIR to change ~/.android-signing to your prefered base dir
+ *
+ */
+
+if (!isAndroidProject()) {
+    throw new ConfigurationException("Android Application or Library plugin is expected but not configured")
+} else if (!project.hasProperty("releaseConfig")) {
+    // nothing to do
+    return;
+}
+
+def configName = (String) project.property("releaseConfig")
+
+if (!buildSigningConfigPath(configName).exists()) {
+    throw new ConfigurationException("Signing config set but not found at '" + buildSigningConfigPath(configName) + "'")
+}
+
+apply from: buildSigningConfigPath(configName)
+
+android {
+    signingConfigs {
+        release {
+            storeFile = buildSigningConfigPath(configName, ".keystore")
+            storePassword = releaseStorePassword
+            keyAlias = releaseKeyAlias
+            keyPassword = releaseKeyPassword
+        }
+    }
+}
+
+private boolean isAndroidProject() {
+    project.plugins.findPlugin('com.android.application') || project.plugins.findPlugin('com.android.library')
+}
+
+private File buildSigningConfigPath(String cfgName, String fileSuffix = ".gradle") {
+
+    def basePath = System.env.SIGNING_CONFIG_BASEDIR ?: "${System.properties['user.home']}/.android-signing"
+    // convention:
+    // configuration is named like it's parent folder that is residing in the config basedir ( default: ~/.android-signing))
+    basePath = new File(basePath, cfgName)
+
+    return new File(basePath, cfgName + fileSuffix)
+}
