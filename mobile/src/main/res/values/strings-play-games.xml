@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_id">749865820830</string>
+
     <string name="achievement_hellothere">CgkInsXxu-kVEAIQBg</string>
     <string name="achievement_gotcha">CgkInsXxu-kVEAIQAQ</string>
     <string name="achievement_onaroll">CgkInsXxu-kVEAIQAg</string>
     <string name="achievement_pokerface">CgkInsXxu-kVEAIQAw</string>
     <string name="achievement_connoisseur">CgkInsXxu-kVEAIQBA</string>
     <string name="achievement_addict">CgkInsXxu-kVEAIQBQ</string>
+
+    <string name="leaderboard_playedgames">CgkInsXxu-kVEAIQBw</string>
+    <string name="leaderboard_wongamesinarow">CgkInsXxu-kVEAIQCA</string>
 </resources>
