@@ -29,6 +29,8 @@ public class GooglePlayServicesActivity extends Activity {
         playGamesClient.restoreInstanceState(savedInstanceState);
 
         achievementObserver = new AchievementObserver(playGamesClient, this);
+
+        setContentView(R.layout.activity_gms);
     }
 
     @Override
