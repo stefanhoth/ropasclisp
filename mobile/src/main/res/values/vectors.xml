@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <dimen name="circle_size">100dp</dimen>
+
   <integer name="circle_outline_stroke_width">10</integer>
   <integer name="hand_outline_stroke_width">3</integer>
+
+  <color name="circle_filling">@color/primary</color>
+  <color name="circle_outline">@color/accent</color>
+  <color name="hand_filling">@android:color/white</color>
+  <color name="hand_outline">@android:color/black</color>
 
 </resources>
