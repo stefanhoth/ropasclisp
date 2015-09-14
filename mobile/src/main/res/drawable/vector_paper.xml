@@ -16,7 +16,7 @@ Z" />
 
   <path
     android:name="circle_filling"
-    android:fillColor="#ffc107"
+    android:fillColor="@color/circle_filling"
     android:pathData="M171.763870239,86.5903930664
 C171.763870239,133.630386353,133.63041687,171.763839722,86.5904235837,171.763839722
 C39.5504226682,171.763839722,1.4169670341,133.630386353,1.4169670341,86.5903930667
@@ -28,8 +28,8 @@ Z" />
 
     <path
       android:name="hand"
-      android:fillColor="@android:color/white"
-      android:strokeColor="@android:color/black"
+      android:fillColor="@color/hand_filling"
+      android:strokeColor="@color/hand_outline"
       android:strokeWidth="@integer/hand_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
@@ -70,8 +70,8 @@ Z" />
 
     <path
       android:name="finger_gap_1"
-      android:fillColor="@android:color/white"
-      android:strokeColor="@android:color/black"
+      android:fillColor="@color/hand_filling"
+      android:strokeColor="@color/hand_outline"
       android:strokeWidth="@integer/hand_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
@@ -81,8 +81,8 @@ L75.1203079224,56.1541366577" />
 
     <path
       android:name="finger_gap_2"
-      android:fillColor="@android:color/white"
-      android:strokeColor="@android:color/black"
+      android:fillColor="@color/hand_filling"
+      android:strokeColor="@color/hand_outline"
       android:strokeWidth="@integer/hand_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
@@ -91,8 +91,8 @@ C94.2299575796,59.5483398438,87.6829223623,67.3102874756,81.8525009146,70.772613
 
     <path
       android:name="finger_gap_3"
-      android:fillColor="@android:color/white"
-      android:strokeColor="@android:color/black"
+      android:fillColor="@color/hand_filling"
+      android:strokeColor="@color/hand_outline"
       android:strokeWidth="@integer/hand_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
@@ -102,8 +102,8 @@ C107.145324707,72.5420761108,98.5446853637,76.8417510986,96.0862808227,82.121170
 
     <path
       android:name="finger_gap_4"
-      android:fillColor="@android:color/white"
-      android:strokeColor="@android:color/black"
+      android:fillColor="@color/hand_filling"
+      android:strokeColor="@color/hand_outline"
       android:strokeWidth="@integer/hand_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
@@ -114,7 +114,7 @@ C114.319038391,88.0388641357,110.704589844,85.872795105,101.856735229,101.548355
 
   <path
     android:name="circle_outline"
-    android:strokeColor="@color/accent"
+    android:strokeColor="@color/circle_outline"
     android:strokeWidth="@integer/circle_outline_stroke_width"
     android:strokeLineJoin="round"
     android:strokeLineCap="round"

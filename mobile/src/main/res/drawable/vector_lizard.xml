@@ -16,7 +16,7 @@ Z" />
 
   <path
     android:name="circle_filling"
-    android:fillColor="@color/primary"
+    android:fillColor="@color/circle_filling"
     android:strokeLineCap="round"
     android:pathData="M171.765090942,86.5882263184
 C171.765090942,133.628234863,133.631637573,171.761688233,86.5916442867,171.761688233
@@ -29,8 +29,8 @@ Z" />
 
     <path
       android:name="hand_little_finger"
-      android:fillColor="@android:color/white"
-      android:strokeColor="@android:color/black"
+      android:fillColor="@color/hand_filling"
+      android:strokeColor="@color/hand_outline"
       android:strokeWidth="@integer/hand_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
@@ -59,8 +59,8 @@ Z" />
 
     <path
       android:name="hand_ring_finger"
-      android:fillColor="@android:color/white"
-      android:strokeColor="@android:color/black"
+      android:fillColor="@color/hand_filling"
+      android:strokeColor="@color/hand_outline"
       android:strokeWidth="@integer/hand_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
@@ -89,8 +89,8 @@ Z" />
 
     <path
       android:name="hand_middle_finger"
-      android:fillColor="@android:color/white"
-      android:strokeColor="@android:color/black"
+      android:fillColor="@color/hand_filling"
+      android:strokeColor="@color/hand_outline"
       android:strokeWidth="@integer/hand_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
@@ -119,8 +119,8 @@ Z" />
 
     <path
       android:name="hand"
-      android:fillColor="@android:color/white"
-      android:strokeColor="@android:color/black"
+      android:fillColor="@color/hand_filling"
+      android:strokeColor="@color/hand_outline"
       android:strokeWidth="@integer/hand_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
@@ -166,7 +166,7 @@ Z" />
 
   <path
     android:name="circle_outline"
-    android:strokeColor="@color/accent"
+    android:strokeColor="@color/circle_outline"
     android:strokeWidth="@integer/circle_outline_stroke_width"
     android:strokeLineJoin="round"
     android:strokeLineCap="round"
