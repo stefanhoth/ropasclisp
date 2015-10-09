@@ -31,7 +31,7 @@ Z" />
       android:name="hand_little_finger"
       android:fillColor="@color/hand_filling"
       android:strokeColor="@color/hand_outline"
-      android:strokeWidth="@integer/hand_outline_stroke_width"
+      android:strokeWidth="@integer/hand_single_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
       android:pathData="M90.9754180908,59.4660568237
@@ -61,7 +61,7 @@ Z" />
       android:name="hand_ring_finger"
       android:fillColor="@color/hand_filling"
       android:strokeColor="@color/hand_outline"
-      android:strokeWidth="@integer/hand_outline_stroke_width"
+      android:strokeWidth="@integer/hand_single_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
       android:pathData="M89.5037918091,50.9841384888
@@ -91,7 +91,7 @@ Z" />
       android:name="hand_middle_finger"
       android:fillColor="@color/hand_filling"
       android:strokeColor="@color/hand_outline"
-      android:strokeWidth="@integer/hand_outline_stroke_width"
+      android:strokeWidth="@integer/hand_single_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
       android:pathData="M95.1119155884,45.7265167236
@@ -121,7 +121,7 @@ Z" />
       android:name="hand"
       android:fillColor="@color/hand_filling"
       android:strokeColor="@color/hand_outline"
-      android:strokeWidth="@integer/hand_outline_stroke_width"
+      android:strokeWidth="@integer/hand_single_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
       android:pathData="M90.3014450073,48.1205863953
@@ -167,7 +167,7 @@ Z" />
   <path
     android:name="circle_outline"
     android:strokeColor="@color/circle_outline"
-    android:strokeWidth="@integer/circle_outline_stroke_width"
+    android:strokeWidth="@integer/circle_single_outline_stroke_width"
     android:strokeLineJoin="round"
     android:strokeLineCap="round"
     android:pathData="M171.765090942,86.5882263184

@@ -30,7 +30,7 @@ Z" />
       android:name="hand"
       android:fillColor="@color/hand_filling"
       android:strokeColor="@color/hand_outline"
-      android:strokeWidth="@integer/hand_outline_stroke_width"
+      android:strokeWidth="@integer/hand_single_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
       android:pathData="M-12.9570837021,135.016998291
@@ -72,7 +72,7 @@ L-12.9570837021,135.01699829101562 Z" />
     <path
       android:name="knuckle1"
       android:strokeColor="@color/hand_outline"
-      android:strokeWidth="@integer/hand_outline_stroke_width"
+      android:strokeWidth="@integer/hand_single_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
       android:pathData="M106.106567383,105.010643005
@@ -81,7 +81,7 @@ C104.179512024,102.231689453,100.356399536,101.124313354,100.143768311,99.624893
     <path
       android:name="knuckle2"
       android:strokeColor="@color/hand_outline"
-      android:strokeWidth="@integer/hand_outline_stroke_width"
+      android:strokeWidth="@integer/hand_single_outline_stroke_width"
       android:strokeLineJoin="round"
       android:strokeLineCap="round"
       android:pathData="M98.0279541016,122.129646301 L100.720817566,119.821472168
@@ -92,7 +92,7 @@ L104.183074951,118.859725952" />
   <path
     android:name="circle_outline"
     android:strokeColor="@color/circle_outline"
-    android:strokeWidth="@integer/circle_outline_stroke_width"
+    android:strokeWidth="@integer/circle_single_outline_stroke_width"
     android:strokeLineJoin="round"
     android:strokeLineCap="round"
     android:pathData="M171.765090942,86.5882263184
