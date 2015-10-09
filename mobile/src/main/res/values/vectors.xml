@@ -5,6 +5,9 @@
   <integer name="circle_single_outline_stroke_width">10</integer>
   <integer name="hand_single_outline_stroke_width">3</integer>
 
+  <integer name="circle_group_outline_stroke_width">15</integer>
+  <integer name="hand_group_outline_stroke_width">6</integer>
+
 
   <color name="circle_filling">@color/primary</color>
   <color name="circle_outline">@color/accent</color>
