@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Ropasc Lisp</string>
+
+    <string name="sign_lizard">Lizard</string>
+    <string name="sign_paper">Paper</string>
+    <string name="sign_rock">Rock</string>
+    <string name="sign_scissors">Scissors</string>
+    <string name="sign_spock">Spock</string>
+
+
 </resources>
