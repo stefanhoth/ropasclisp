@@ -8,10 +8,14 @@
   <integer name="circle_group_outline_stroke_width">15</integer>
   <integer name="hand_group_outline_stroke_width">6</integer>
 
+  <integer name="arrow_tip_stroke_width">1</integer>
+  <integer name="arrow_body_stroke_width">2</integer>
+
 
   <color name="circle_filling">@color/primary</color>
   <color name="circle_outline">@color/accent</color>
   <color name="hand_filling">@android:color/white</color>
   <color name="hand_outline">@android:color/black</color>
+  <color name="arrow">@color/accent</color>
 
 </resources>
