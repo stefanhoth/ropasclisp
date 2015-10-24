@@ -1,16 +1,18 @@
 package com.stefanhoth.ropasclisp;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.stefanhoth.ropasclisp.achievements.AchievementObserver;
 import com.stefanhoth.ropasclisp.achievements.DAILY_STATE;
 import com.stefanhoth.ropasclisp.games_sdk.PlayGamesClient;
+import com.stefanhoth.ropasclisp.playing.HandSignActivity;
 
-public class GooglePlayServicesActivity extends Activity {
+public class GooglePlayServicesActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int REQUEST_CODE_RESOLUTION = 1;
     private static final int CODE_REQUEST_ACHIEVEMENTS = 42;
@@ -31,6 +33,7 @@ public class GooglePlayServicesActivity extends Activity {
         achievementObserver = new AchievementObserver(playGamesClient, this);
 
         setContentView(R.layout.activity_gms);
+        findViewById(R.id.robasclisp).setOnClickListener(this);
     }
 
     @Override
@@ -79,4 +82,8 @@ public class GooglePlayServicesActivity extends Activity {
         achievementObserver.onGameWin();
     }
 
+    @Override
+    public void onClick(View v) {
+         startActivity(new Intent(this, HandSignActivity.class));
+    }
 }
