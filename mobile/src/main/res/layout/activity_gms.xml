@@ -1,42 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
   android:layout_height="match_parent">
 
   <ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/vector_spock"
-    android:layout_gravity="center"
-    android:contentDescription="spock sign" />
-
-  <ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/vector_lizard"
-    android:layout_gravity="center"
-    android:contentDescription="lizard sign" />
-
-  <ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/vector_paper"
-    android:layout_gravity="center"
-    android:contentDescription="paper sign" />
-
-  <ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/vector_rock"
-    android:layout_gravity="center"
-    android:contentDescription="rock sign" />
-
-  <ImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/vector_scissors"
-    android:layout_gravity="center"
-    android:contentDescription="scissors sign" />
-
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:src="@drawable/vector_ropasclisp"
+    android:scaleType="centerInside"
+    android:layout_margin="@dimen/sign_margin"
+    android:contentDescription="@null" />
 
 </LinearLayout>
