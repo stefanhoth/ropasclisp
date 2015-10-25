@@ -21,6 +21,7 @@ public class HandSignActivity extends AppCompatActivity implements HandSignFragm
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new HandSignAdapter(getSupportFragmentManager()));
         viewPager.addOnPageChangeListener(this);
+        onPageSelected(viewPager.getCurrentItem());
     }
 
     @Override
