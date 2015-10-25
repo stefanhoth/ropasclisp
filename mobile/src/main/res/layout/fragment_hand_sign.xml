@@ -4,6 +4,6 @@
   android:layout_height="match_parent"
   android:id="@+id/sign"
   tools:src="@drawable/vector_spock"
-  android:layout_margin="@dimen/sign_margin"
+  android:padding="@dimen/sign_margin"
   android:scaleType="fitCenter"
   android:contentDescription="@null" />

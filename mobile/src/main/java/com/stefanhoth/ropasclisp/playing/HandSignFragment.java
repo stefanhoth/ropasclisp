@@ -1,6 +1,8 @@
 package com.stefanhoth.ropasclisp.playing;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.novoda.notils.caster.Views;
+import com.stefanhoth.ropasclisp.CircularFrameDrawable;
 import com.stefanhoth.ropasclisp.R;
 
 public class HandSignFragment extends Fragment implements View.OnClickListener {
@@ -48,7 +51,12 @@ public class HandSignFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         ImageView signView = Views.findById(view, R.id.sign);
-        signView.setImageResource(handSign.getVectorResId());
+        Resources resources = getResources();
+        Drawable drawable = new CircularFrameDrawable(
+                resources.getDrawable(handSign.getVectorResId()),
+                resources.getColor(R.color.circle_filling),
+                resources.getColor(R.color.circle_outline));
+        signView.setImageDrawable(drawable);
         signView.setOnClickListener(this);
     }
 
